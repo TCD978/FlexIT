@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex IT | Empowering Technology</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flex IT provides residential and small business tech setup, support, networking, tutoring, and troubleshooting in Dracut, MA and surrounding communities." />
+
+  <style>
+    :root {
+      --blue-dark: #0b2c4a;
+      --blue-accent: #1f6fd1;
+      --silver: #cfd6e3;
+      --bg-light: #f5f7fb;
+      --text-main: #1a1a1a;
+      --text-muted: #5c6b80;
+      --radius: 18px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f0f4fa;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--blue-dark);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav img {
+      height: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-accent));
+      color: #fff;
+      padding: 60px 24px;
+      text-align: center;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .hero img {
+      height: 140px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #e4ecff;
+    }
+
+    /* PAGE WRAPPER */
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px;
+    }
+
+    /* SECTION CARD */
+    .card {
+      background: #fff;
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 26px rgba(11, 44, 74, 0.12);
+      border: 1px solid rgba(207,214,227,0.8);
+      margin-bottom: 32px;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* SERVICES GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .service {
+      background: var(--bg-light);
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(207,214,227,0.9);
+    }
+
+    .service h3 {
+      font-size: 1rem;
+      color: var(--blue-dark);
+      margin-bottom: 6px;
+    }
+
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+
+    thead {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-accent));
+      color: #fff;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    tbody tr:nth-child(even) { background: #f3f6fc; }
+    tbody tr:nth-child(odd) { background: #fff; }
+
+    td {
+      border-bottom: 1px solid rgba(207,214,227,0.7);
+    }
+
+    .price {
+      font-weight: 700;
+      color: var(--blue-dark);
+      white-space: nowrap;
+    }
+
+    /* CONTACT FORM */
+    form {
+      margin-top: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #cfd6e3;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--blue-accent);
+      color: #fff;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 32px 24px;
+      text-align: center;
+      margin-top: 40px;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+
+    footer p {
+      margin-top: 8px;
+      color: #e4ecff;
+    }
+
+    @media (max-width: 720px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <img src="IMG_4313.jpg" alt="Flex IT Logo">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#residential">Residential</a></li>
+      <li><a href="#business">Business</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="IMG_4313.jpg" alt="Flex IT Logo">
+    <h1>Flex IT</h1>
+    <p>Empowering Technology — Dracut, MA & Surrounding Communities</p>
+  </header>
+
+  <div class="wrap">
+
+    <!-- SERVICES -->
+    <section id="services" class="card">
+      <h2>Services</h2>
+      <p>Professional in-home, on-site and remote support for homes and small businesses.</p>
+
+      <div class="grid">
+        <div class="service">
+          <h3>Residential Tech Setup</h3>
+          <p>Computers, Wi‑Fi, mesh systems, smart home devices, printers & peripherals.</p>
+        </div>
+        <div class="service">
+          <h3>Data, Backup & Security</h3>
+          <p>Data transfer, cloud backup setup, malware removal, tune‑ups.</p>
+        </div>
+        <div class="service">
+          <h3>Tutoring & Remote Support</h3>
+          <p>Friendly, patient tech tutoring and remote help sessions.</p>
+        </div>
+        <div class="service">
+          <h3>Small Business IT</h3>
+          <p>Office networks, workstations, Microsoft 365, Google Workspace, POS setup.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESIDENTIAL PRICING -->
+    <section id="residential" class="card">
+      <h2>Residential Pricing</h2>
+      <p>House calls start at $125. Equipment and subscriptions are separate.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Scope</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Computer setup</td><td>Updates, sign‑in, basic settings</td><td class="price">$125</td></tr>
+          <tr><td>Wi‑Fi setup</td><td>Router + up to 5 devices</td><td class="price">$125</td></tr>
+          <tr><td>Mesh Wi‑Fi</td><td>Up to 3 nodes</td><td class="price">$225</td></tr>
+          <tr><td>Smart device</td><td>One plug‑in device</td><td class="price">$45*</td></tr>
+          <tr><td>Smart bundle</td><td>Up to 3 devices</td><td class="price">$119*</td></tr>
+          <tr><td>Printer setup</td><td>One device</td><td class="price">$45*</td></tr>
+          <tr><td>Data transfer</td><td>Up to 150 GB</td><td class="price">$149</td></tr>
+          <tr><td>Cloud backup</td><td>One account</td><td class="price">$45*</td></tr>
+          <tr><td>Malware removal</td><td>Up to 90 minutes</td><td class="price">From $149</td></tr>
+          <tr><td>Troubleshooting</td><td>Up to 60 minutes</td><td class="price">$125</td></tr>
+          <tr><td>Remote support</td><td>30‑min increments</td><td class="price">$75/hr</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- BUSINESS PRICING -->
+    <section id="business" class="card">
+      <h2>Small Business Pricing</h2>
+      <p>Business house calls start at $175 including the first hour.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Scope</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Office network</td><td>Router + 5 devices</td><td class="price">$299</td></tr>
+          <tr><td>Workstation setup</td><td>One computer</td><td class="price">$175</td></tr>
+          <tr><td>Additional workstation</td><td>Same visit</td><td class="price">$149</td></tr>
+          <tr><td>Microsoft 365 / Google Workspace</td><td>Up to 3 users</td><td class="price">$175</td></tr>
+          <tr><td>POS setup</td><td>Terminal + peripherals</td><td class="price">From $249</td></tr>
+          <tr><td>Backup consultation</td><td>Review + recommendations</td><td class="price">$175</td></tr>
+          <tr><td>Remote support</td><td>30‑min increments</td><td class="price">$95/hr</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Book your Flex IT visit — clear scope, transparent pricing, professional support.</p>
+
+      <p><strong>Phone:</strong> 978‑872‑7798</p>
+      <p><strong>Email:</strong> Tom@flexintegrationtech.com</p>
+
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="How can we help?" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>Flex IT — Tech Help, Your Way</h3>
+    <p>Serving Dracut, MA & surrounding communities</p>
+    <p>Senior discount available · Travel included within 15 miles</p>
+  </footer>
+
+</body>
+</html>
