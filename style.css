@@ -895,3 +895,55 @@ form {
 
 
 
+/* Pricing: native disclosure controls work without JavaScript. */
+.pricing { background: linear-gradient(135deg,#0d2240,#07152c); border-top: 1px solid var(--line); }
+.pricing .text-link { color: #a7dcff; }
+.pricing-intro { color: var(--muted); line-height: 1.7; }
+.price-highlights { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:32px 0; }
+.price-highlights>div { padding:26px; border:1px solid #7bcaff40; border-radius:8px; background:#4dbfff08; }
+.price-highlights span,.price-highlights small { display:block; color:var(--muted); font-size:12px; line-height:1.6; }
+.price-highlights strong { display:block; font-size:32px; color:#c1e9ff; margin:12px 0; letter-spacing:-1px; }
+.price-date { font-size:12px; color:var(--muted); line-height:1.7; margin:25px 0; }
+.price-panel { border:1px solid var(--line); border-radius:8px; margin:12px 0; background:#ffffff03; }
+.price-panel summary { display:flex; align-items:center; justify-content:space-between; padding:24px 28px; gap:20px; cursor:pointer; list-style:none; }
+.price-panel summary::-webkit-details-marker { display:none; }
+.price-panel summary:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
+.price-panel summary strong { font-size:20px; font-weight:600; }
+.price-panel summary small { display:block; font-size:12px; color:var(--muted); margin-top:8px; line-height:1.6; }
+.expand { font-size:26px; color:var(--blue); }
+.price-panel[open] .expand { transform:rotate(45deg); }
+.price-panel[open] summary { border-bottom:1px solid var(--line); }
+.price-body { padding:8px 28px 28px; }
+.price-body h3 { margin:30px 0 20px; font-size:21px; }
+.rate { display:grid; grid-template-columns:1fr auto; gap:25px; padding:20px 0; border-bottom:1px solid var(--line); }
+.rate h4,.package-grid h4 { font-size:15px; margin:0 0 8px; font-weight:600; }
+.rate p,.package-grid p,.pricing-notes p { font-size:13px; color:#b8c8dd; line-height:1.8; margin:0; }
+.rate strong { color:#b5e6ff; font-size:17px; white-space:nowrap; }
+.pricing-notes { padding:18px 0; }
+.pricing-notes p { margin:10px 0; }
+.package-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+.package-grid article { background:#4dbfff08; border:1px solid var(--line); padding:22px; border-radius:7px; }
+.package-grid strong { display:block; font-size:28px; margin:14px 0; color:#b5e6ff; }
+.price-body>.button { margin-top:25px; }
+@media(max-width:700px) { .nav {flex-wrap:wrap; padding:17px 0; gap:18px;} .nav nav {gap:14px;} .price-highlights {grid-template-columns:1fr;gap:10px;} .price-highlights>div {padding:20px;} .price-highlights strong {font-size:29px;margin:8px 0;} .price-panel summary {padding:21px 18px;} .price-panel summary strong {font-size:18px;} .price-body {padding:5px 18px 22px;} .rate {gap:12px;} .rate h4 {font-size:14px;} .rate strong {font-size:14px;} .rate p {font-size:12px;} .package-grid {grid-template-columns:1fr;} }
+/* Additional business and website services. */
+.service-grid { grid-template-columns:repeat(3,1fr); }
+.web-service { border-color:#63cbff80; background:linear-gradient(135deg,#17416c,#0c1c34); }
+.hero h1 { font-size:clamp(38px,3.7vw,54px); }
+.hero .actions { flex-wrap:wrap; }
+.website-feature { background:linear-gradient(120deg,#eaf0f7,#dce7f3);color:#102541;border-top:3px solid #6bcaff; }
+.website-feature .eyebrow { color:#26649a; }
+.website-feature .section-heading>p {color:#4c6078;}
+.website-builds {display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.website-builds article {padding:32px;border:1px solid #adc3db;border-radius:9px;background:#ffffff90;}
+.website-builds h3 {font-size:25px;letter-spacing:-.7px;margin:15px 0;}
+.website-builds strong {font-size:42px;font-weight:600;letter-spacing:-1.5px;}
+.website-builds p {line-height:1.8;color:#4c6078;min-height:58px;font-size:15px;}
+.website-builds .button {margin-top:10px;}
+.website-inclusions {padding-top:22px;}
+.website-inclusions p {font-size:14px;line-height:1.8;color:#4c6078;max-width:900px;}
+@media(max-width:1000px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:700px){.website-builds{grid-template-columns:1fr;}.website-builds article{padding:25px;}.hero h1{font-size:clamp(36px,8vw,50px);}.hero .actions{gap:22px;}.service p{min-height:145px;}}
+@media(max-width:380px){.service-grid{grid-template-columns:1fr;}.service p{min-height:0;}}
+
+.site-credit { display:inline-block; margin-top:8px; color:#b5c9e1; }
