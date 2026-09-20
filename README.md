@@ -32,19 +32,17 @@ No scheduled automation is installed by Phase 1. Automation is a scoped customer
 
 ## Continuation
 
-Phase 1 is the business-offer unit. Phase 2 should improve visual hierarchy and ACTIAS LUNA's restrained visual identity using the existing static architecture. Do not start configurators or backend systems concurrently. Later portfolio work needs the actual astrology project URL/repository before adding technology claims or live links. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
+Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 (website configurator) is next, only on explicit instruction. Do not start backend systems concurrently. Later portfolio work needs the actual astrology project URL/repository before adding technology claims or live links. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
 
 
 ## Optional ACTIAS soundtrack (separate from Phase 2)
 
-Place the owner-supplied MP3 at `assets/audio/starfall-9jackjack8.mp3`.
+The soundtrack is stored at `assets/audio/starfall-9jackjack8.mp3`.
 The original Pixabay MP3 is bundled (5,871,490 bytes). Do not replace it with another track.
 
-Asset record supplied by the owner: Track: Starfall (Hardwave Atmospheric Beat).
+Asset record: Track: Starfall (Hardwave Atmospheric Beat).
 Artist: 9JackJack8. Source: Pixabay. License: Pixabay Content License.
-Downloaded for use as ACTIAS website background audio. Retain the download page
-and license record with the original download; this integration does not verify
-an absent file or its licensing provenance.
+Downloaded for use as ACTIAS website background audio. Retain the download page and license record with the original download.
 
 The optional ACTIAS AUDIO OFF/LIVE button uses audio.js and existing site colors.
 Audio starts only on an explicit press, fades to 12% gain over 1.2 seconds, loops,
@@ -56,13 +54,35 @@ page departures stop audio. There is no initial audio request or new service.
 Missing/blocked audio leaves the control OFF with a retry message; a missing
 file can still appear as an HTTP 404 in browser developer tools.
 
-Phase 2 remains on hold. Pricing, contact code, deployment settings and phase
-instructions are unchanged. No runtime credit/API controls are added or altered.
-After supplying the MP3, check actual sound level, fades and loop seam on iPhone,
-Android and desktop before publishing. Native looping cannot remove silence
+Phase 2 preserves the soundtrack behavior. Pricing, contact code and deployment settings are unchanged. No runtime credit/API controls are added or altered.
+Actual playback was checked in the desktop browser. Physical iPhone/Android listening and the complete loop seam still warrant device testing. Native looping cannot remove silence
 already contained in the recording. Run `node test_audio.cjs` for mocked state tests.
 
 Verified track listing: https://pixabay.com/music/electronic-starfall-hardwave-atmospheric-beat-600080/
 The listing identifies 9JackJack8, a 3:03 MP3, and the Pixabay Content License.
 Downloaded September 16, 2026 from the exact track player source:
 https://cdn.pixabay.com/audio/2026/09/09/audio_2da32d9589.mp3
+
+
+## Phase 2: visual hierarchy and navigation
+
+`phase2.css` contains the visual upgrade over the preserved base stylesheet.
+Flex IT remains the parent brand; ACTIAS LUNA uses a small original SVG mark
+with abstract wing symmetry and a crescent. No external font, image service,
+animation library, paid integration or additional runtime dependency is used.
+The decorative connection illustration is CSS; it makes no live-system claims.
+
+`navigation.js` progressively enhances mobile navigation: without JavaScript
+all links remain visible. Menu state follows the mobile breakpoint, closes
+after navigation, and Escape returns focus to its button. Links to content
+inside pricing disclosures open the disclosure before navigation.
+
+The original prices, plan boundaries, contact script, audio script, MP3,
+pricing PDF, domain settings, SEO metadata and business claims are retained.
+Keyboard focus and reduced-motion styles are preserved. Phase 3 is not started.
+
+Validation: run `python check_site.py`, `node test_contact.cjs`, and
+`node test_audio.cjs`; check responsive navigation, pricing disclosures,
+contact validation and horizontal overflow at 320–1440px before publication.
+
+Phase 2 validation completed: nine widths (320, 390, 412, 768, 800, 820, 1024, 1366, 1440), mobile menu Enter/Escape/focus, pricing disclosure keyboard and anchor behavior, required contact fields, loaded SVG, no browser console errors. Existing automated pricing, contact and audio tests pass. Reduced-motion and no-JavaScript fallbacks verified in source; physical-device testing was not performed.
