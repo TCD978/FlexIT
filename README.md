@@ -32,7 +32,7 @@ No scheduled automation is installed by Phase 1. Automation is a scoped customer
 
 ## Continuation
 
-Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 (website configurator) is next, only on explicit instruction. Do not start backend systems concurrently. Later portfolio work needs the actual astrology project URL/repository before adding technology claims or live links. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
+Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 requires a separate instruction. Do not start backend systems concurrently. Later portfolio work needs the actual astrology project URL/repository before adding technology claims or live links. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
 
 
 ## Optional ACTIAS soundtrack (separate from Phase 2)
@@ -79,10 +79,89 @@ inside pricing disclosures open the disclosure before navigation.
 
 The original prices, plan boundaries, contact script, audio script, MP3,
 pricing PDF, domain settings, SEO metadata and business claims are retained.
-Keyboard focus and reduced-motion styles are preserved. Phase 3 is not started.
+Keyboard focus and reduced-motion styles are preserved.
 
 Validation: run `python check_site.py`, `node test_contact.cjs`, and
 `node test_audio.cjs`; check responsive navigation, pricing disclosures,
 contact validation and horizontal overflow at 320–1440px before publication.
 
 Phase 2 validation completed: nine widths (320, 390, 412, 768, 800, 820, 1024, 1366, 1440), mobile menu Enter/Escape/focus, pricing disclosure keyboard and anchor behavior, required contact fields, loaded SVG, no browser console errors. Existing automated pricing, contact and audio tests pass. Reduced-motion and no-JavaScript fallbacks verified in source; physical-device testing was not performed.
+
+
+## Phase 3 — website configurator
+
+`configurator.js` holds the published-price recommendation rules and safe contact-form
+handoff; `configurator.css` scopes the planner styling. No backend, package, tracking,
+storage, or paid service is added. The form starts hidden and is revealed only after
+initialization, with pricing/contact fallback links if JavaScript is unavailable.
+
+Builds use $750 for one page/up to six sections and $1,500 for up to five pages.
+Six to ten pages add the published $150–$250 per extra page; larger or unknown scopes
+are custom quotes. Additional-page estimates assume the existing design and client
+content. A one-page working contact form, booking, ecommerce, email setup/migration,
+and additional SEO require separate quotes. No estimated add-on prices are invented.
+Automation recommends $99 for one feature, $179 for multiple, or a custom quote for
+complex work; initial implementation and third-party fees remain separate. Basic
+metadata and domain connection are already included in standard builds.
+
+Request This Build places an editable summary in the contact form and focuses the
+name field. It never sends email. Repeated requests replace only the exact previously
+generated block, preserving customer-written notes. No customer information is
+persisted locally. A successful contact-form reset clears the handoff notice.
+
+Validation: `node test_configurator.cjs`, `node test_contact.cjs`,
+`node test_audio.cjs`, and `python check_site.py`. Browser checks cover keyboard
+handoff, repeat requests, preserved notes, reset, custom recommendations, mobile
+and desktop layout, and no initial audio playback. Physical devices were not tested.
+Prices must be updated in the published content, PDF source and `PRICES` together.
+
+
+## Phase 3 — quick links / command palette
+
+`quick-links.js` and `quick-links.css` add the header Quick links button and Ctrl/Cmd+K.
+The native dialog contains ordinary links, a labelled search, live result count,
+empty-result guidance, and visible close button. Arrow keys browse matches; Enter
+opens the first match from search; Tab stays inside the modal; Escape returns focus.
+Navigation moves focus to the chosen section and opens pricing disclosures. The
+shortcut is left alone in editable fields outside the dialog. Without JavaScript or
+native dialog support, the button remains hidden and the normal navigation works.
+Browser checks: mobile entry, filtering, no results, arrow/Enter navigation, destination
+focus, shortcut, and Escape. No external library or network requests added.
+
+
+## Phase 3 — fictional before/after design
+
+`design-demo.js` and `design-demo.css` present a clearly labelled invented café,
+Cedar & Cup, in dated and redesigned layouts. Compare both, Before and After use
+native buttons with pressed state and a live status. Both examples and their sample
+menu work without JavaScript. The demonstration is not presented as client work,
+a testimonial, or evidence of business results. Desktop/mobile, keyboard view
+switching and the menu link were checked; no remote artwork or fonts were added.
+
+
+## Phase 3 — live theme demonstrator
+
+The same fictional café preview offers Default, Corporate, Minimal, Modern Dark,
+and Cyber-Neon styles. Variables, fonts, CTA shape, and restrained glow are scoped
+to `#demoCanvas`; the main site's navigation, pricing and contact colors stay intact.
+Choosing a theme from Before switches to After so the change is visible. A native
+select and status text support keyboard users. No motion, storage or new assets.
+`node test_design.cjs` checks at least 4.5:1 contrast for primary/secondary text and
+CTA colors in all five themes. Browser checks confirm each theme applies only to
+the preview and fits a 320px viewport.
+
+
+## Phase 3 release boundary
+
+Four interactive features are complete in separate local commits. The optional
+service ecosystem graphic is deferred because the existing service cards and
+quick links already provide those customer paths. No Phase 4 portfolio work,
+scanner, backend, paid service, DNS change, or recurring price change is included.
+
+Final automated checks pass: site/PDF consistency, configurator pricing boundaries,
+theme contrast, contact provider mocks and audio state mocks. Browser checks pass at
+320, 390, 412, 768, 820, 1366 and 1440px without horizontal overflow, with no console
+errors. Keyboard checks cover planner handoff, command-palette filtering, focus loop,
+Escape, destination focus and comparison controls. Contact tests did not transmit
+email; audio remained OFF. JavaScript-disabled fallbacks and reduced-motion support
+were checked in source; physical-device and live email delivery testing were not done.
