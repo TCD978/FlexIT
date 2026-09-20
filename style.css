@@ -987,3 +987,15 @@ form {
 .managed-plans .recommended {border:2px solid #84d6ff;}
 .plan-label,.managed-plans .powered {color:#a9e6ff;font-size:12px;font-weight:700;}
 @media(max-width:700px){.managed-plans{grid-template-columns:1fr;}.managed-plans article{padding:20px;}.automation-intro{padding:22px;}.hero .actions{gap:14px;}.hero h1{overflow-wrap:normal;}}
+
+
+/* Optional soundtrack: normal flow never covers navigation or content. */
+.audio-row {display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:0 0 18px;}
+.audio-row[hidden] {display:none;}
+.audio-toggle {display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:11px 15px;border:1px solid #607d9d;border-radius:6px;background:var(--deep);color:var(--white);font-size:11px;font-weight:600;letter-spacing:1px;cursor:pointer;}
+.audio-toggle:hover {border-color:var(--blue);}
+.audio-light {color:var(--muted);}
+.audio-toggle[aria-pressed="true"] .audio-light {color:#a4e5d0;animation:audio-breathe 3s ease-in-out infinite;}
+#audioStatus {font-size:12px;color:var(--muted);line-height:1.6;}
+@keyframes audio-breathe {50% {text-shadow:0 0 9px #a4e5d080;}}
+@media(prefers-reduced-motion:reduce) {.audio-light {animation:none!important;}}

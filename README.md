@@ -33,3 +33,36 @@ No scheduled automation is installed by Phase 1. Automation is a scoped customer
 ## Continuation
 
 Phase 1 is the business-offer unit. Phase 2 should improve visual hierarchy and ACTIAS LUNA's restrained visual identity using the existing static architecture. Do not start configurators or backend systems concurrently. Later portfolio work needs the actual astrology project URL/repository before adding technology claims or live links. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
+
+
+## Optional ACTIAS soundtrack (separate from Phase 2)
+
+Place the owner-supplied MP3 at `assets/audio/starfall-9jackjack8.mp3`.
+The original Pixabay MP3 is bundled (5,871,490 bytes). Do not replace it with another track.
+
+Asset record supplied by the owner: Track: Starfall (Hardwave Atmospheric Beat).
+Artist: 9JackJack8. Source: Pixabay. License: Pixabay Content License.
+Downloaded for use as ACTIAS website background audio. Retain the download page
+and license record with the original download; this integration does not verify
+an absent file or its licensing provenance.
+
+The optional ACTIAS AUDIO OFF/LIVE button uses audio.js and existing site colors.
+Audio starts only on an explicit press, fades to 12% gain over 1.2 seconds, loops,
+and fades out over 0.6 seconds before pausing. A Web Audio gain stage controls
+volume on mobile as well as desktop. No unsupported loud-playback fallback.
+Preference is stored locally when available; even remembered LIVE requires a
+new press after a reload. Section links preserve playback and position. Full
+page departures stop audio. There is no initial audio request or new service.
+Missing/blocked audio leaves the control OFF with a retry message; a missing
+file can still appear as an HTTP 404 in browser developer tools.
+
+Phase 2 remains on hold. Pricing, contact code, deployment settings and phase
+instructions are unchanged. No runtime credit/API controls are added or altered.
+After supplying the MP3, check actual sound level, fades and loop seam on iPhone,
+Android and desktop before publishing. Native looping cannot remove silence
+already contained in the recording. Run `node test_audio.cjs` for mocked state tests.
+
+Verified track listing: https://pixabay.com/music/electronic-starfall-hardwave-atmospheric-beat-600080/
+The listing identifies 9JackJack8, a 3:03 MP3, and the Pixabay Content License.
+Downloaded September 16, 2026 from the exact track player source:
+https://cdn.pixabay.com/audio/2026/09/09/audio_2da32d9589.mp3

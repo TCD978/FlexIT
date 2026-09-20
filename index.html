@@ -19,6 +19,9 @@
 <header class="header"><div class="wrap nav">
 <a aria-label="Flex IT home" class="brand" href="#"><span class="brand-name">Flex <b>IT</b><i></i></span><span>TECHNOLOGY SOLUTIONS</span></a>
 <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#websites">Web Development</a><a href="#pricing">Pricing</a><a href="#about">Meet Tom</a><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a></nav>
+</div><div class="wrap audio-row" hidden id="audioPanel">
+<button type="button" class="audio-toggle" id="audioToggle" aria-pressed="false" aria-describedby="audioStatus"><span class="audio-light" aria-hidden="true">&#9673;</span> ACTIAS AUDIO &mdash; <span id="audioState">OFF</span></button>
+<span id="audioStatus" role="status">Optional soundtrack &middot; press to play</span>
 </div></header>
 <main id="main">
 <section class="hero"><div class="wrap hero-grid">
@@ -59,4 +62,4 @@
 <form id="contactForm"><div class="form-heading">Tell me how I can help <span aria-hidden="true">↗</span></div><label for="name">Your name</label><input autocomplete="name" id="name" name="name" placeholder="First and last name" required="" type="text"/><label for="email">Email address</label><input autocomplete="email" id="email" name="email" placeholder="you@example.com" required="" type="email"/><label for="message">How can I help?</label><textarea id="message" name="message" placeholder="Tell me about your tech issue, office setup, or website project…" required=""></textarea><p class="form-note">Please don’t include passwords, payment information, or sensitive files.</p><button class="button primary" type="submit">Send Message</button><noscript><p>JavaScript is needed for this form. Please call or email Tom using the contact details alongside it.</p></noscript><p aria-live="polite" id="formStatus" role="status"></p></form></div></section>
 </main><footer><div class="wrap footer-row"><a class="brand" href="#"><span class="brand-name">Flex <b>IT</b><i></i></span><span>YOUR TECHNOLOGY. WORKING TOGETHER.</span></a><p>© 2026 Flex Integration Tech · Dracut, MA<br/><span class="site-credit">Designed &amp; built by Thomas Doherty · Flex IT</span></p><a href="#main">Back to top ↑</a></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script><script src="script.js"></script>
-</body></html>
+<script src="audio.js"></script></body></html>
