@@ -32,7 +32,7 @@ No scheduled automation is installed by Phase 1. Automation is a scoped customer
 
 ## Continuation
 
-Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 adds the verified Divine Design 144 case study and ACTIAS LUNA showcase. Phase 5 requires a separate instruction. Do not start backend systems concurrently. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
+Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 adds the verified Divine Design 144 case study and ACTIAS LUNA showcase. Phase 5 completes the scanner feasibility review and personal website-review intake; the automatic scanner is deferred. Phase 6 requires a separate instruction. Do not start backend systems concurrently. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
 
 
 ## Optional ACTIAS soundtrack (separate from Phase 2)
@@ -221,7 +221,44 @@ controls, mobile navigation and no horizontal overflow at 320, 390, 412, 768,
 800, 820, 950, 1024, 1366 and 1440px. No Flex IT console errors were observed.
 No real email was sent or music played. Physical-device testing was not performed.
 
-Phase 4 is the release boundary. Phase 5 (Flex Score) has not started; next work
-requires a feasibility/security assessment for real scanning. Never invent scans
-or scores. Any future repair of the separate Divine Design repository should be
+Phase 4 was released before Phase 5. The Phase 5 feasibility decision and scanner continuation are documented in `FLEX-SCORE-SPEC.md`. Never invent scans or scores. Any future repair of the separate Divine Design repository should be
 scoped as its own task.
+
+
+## Phase 5 — Flex Score feasibility and website-review requests
+
+`FLEX-SCORE-SPEC.md` records the evidence, alternatives, proposed scanner design,
+security requirements, and exact continuation point. The current Pages site is
+static; cross-origin reading is restricted, and a single key-free PageSpeed API
+request for Flex IT returned 429/quota exceeded. No scan results were returned.
+A dependable arbitrary-URL scanner requires additional provider/backend and
+operational work. The automatic scanner is deferred as allowed by the original
+Phase 5 instructions; no numerical score or pretend scan is published.
+
+The shipped fallback is Request a Website Review. `website-review.js` prepares a
+plain-text summary with the public website URL, selected priority and optional
+visitor goal. It performs no fetch, DNS lookup, scan or automatic email. It validates
+HTTP(S) URL syntax and rejects credentials; this is not a future SSRF defense.
+No customer data is stored locally. The customer reviews the existing contact form
+and chooses Send Message; scope and any cost are agreed before review work begins.
+No free service or guaranteed turnaround is advertised.
+
+Existing customer notes and build-planner requests remain intact. Repeat requests
+replace only the previous exact generated block, leaving edited text alone. A
+contact-form reset clears review handoff state. Requests wait while an earlier
+message is sending; preparing a new request clears stale contact status. Without
+JavaScript the review instructions link to the existing contact details/form.
+
+`website-review.css` scopes the light-background review section; quick links and
+the fictional comparison now offer review entry points. No contact-provider,
+pricing, audio, domain, SEO, deployment or existing API configuration was changed.
+
+Validation: `node test_website_review.cjs`, all previous Node checks and
+`python check_site.py`. New tests cover URL edge cases, summary text, repeat
+requests, preservation of notes/build requests, invalid inputs, busy-send handling,
+stale status, focus and reset. Browser checks cover native required validation,
+invalid scheme errors, keyboard handoff, repeat requests, cross-feature coexistence,
+quick-link navigation and eight widths (320, 390, 412, 768, 820, 1024, 1366, 1440)
+without horizontal overflow. No console errors observed. No real email sent or
+music played. No-JavaScript fallback was checked in source; physical devices were
+not tested. Phase 6 has not started.
