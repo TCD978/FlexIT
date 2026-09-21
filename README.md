@@ -32,7 +32,7 @@ No scheduled automation is installed by Phase 1. Automation is a scoped customer
 
 ## Continuation
 
-Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 adds the verified Divine Design 144 case study and ACTIAS LUNA showcase. Phase 5 completes the scanner feasibility review and personal website-review intake; the automatic scanner is deferred. Phase 6 requires a separate instruction. Do not start backend systems concurrently. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
+Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 adds the verified Divine Design 144 case study and ACTIAS LUNA showcase. Phase 5 completes the scanner feasibility review and personal website-review intake; the automatic scanner is deferred. Phase 6 documents the reusable-module architecture in [ACTIAS-LUNA-ARCHITECTURE.md](ACTIAS-LUNA-ARCHITECTURE.md). Phase 7 requires a separate instruction. Do not start backend systems concurrently. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
 
 
 ## Optional ACTIAS soundtrack (separate from Phase 2)
@@ -261,4 +261,24 @@ invalid scheme errors, keyboard handoff, repeat requests, cross-feature coexiste
 quick-link navigation and eight widths (320, 390, 412, 768, 820, 1024, 1366, 1440)
 without horizontal overflow. No console errors observed. No real email sent or
 music played. No-JavaScript fallback was checked in source; physical devices were
-not tested. Phase 6 has not started.
+not tested. Phase 6 subsequently documented the future architecture; no scanner or backend was enabled.
+
+## Phase 6 — reusable ACTIAS LUNA architecture
+
+[ACTIAS-LUNA-ARCHITECTURE.md](ACTIAS-LUNA-ARCHITECTURE.md) defines isolated client
+configuration, module/template boundaries, a first scheduled-announcement
+contract, scheduling choices, data-source limits, deployment verification,
+monitoring, recovery, version rollout and managed-service scope. It includes a
+fictional configuration example and a concrete pilot acceptance plan.
+
+This is documentation only, as requested for Phase 6. No module, workflow,
+backend, subscription system, runtime dependency, service or account is enabled.
+The customer-facing site, prices, audio, contact flow and deployment settings
+remain unchanged. The existing weekday showcase remains illustrative.
+
+Validation: reviewed against current source and plan boundaries, parsed the
+JSON example, checked local Markdown links and confirmed only documentation
+changed. The site checker could not rerun because its existing local BeautifulSoup
+dependency folder was inaccessible; no website runtime files changed. Future module acceptance tests are
+specified, not executed. Phase 7 has not started. The exact next module task is
+the one-client pilot in the architecture document.
