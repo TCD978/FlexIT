@@ -32,7 +32,7 @@ No scheduled automation is installed by Phase 1. Automation is a scoped customer
 
 ## Continuation
 
-Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 requires a separate instruction. Do not start backend systems concurrently. Later portfolio work needs the actual astrology project URL/repository before adding technology claims or live links. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
+Phase 1 established the business offer. Phase 2 implements the visual and navigation upgrade. Phase 3 delivers the website configurator, command palette, fictional design comparison and theme preview. Phase 4 adds the verified Divine Design 144 case study and ACTIAS LUNA showcase. Phase 5 requires a separate instruction. Do not start backend systems concurrently. A real Flex Score scanner needs a separate feasibility/security assessment; do not fabricate scores.
 
 
 ## Optional ACTIAS soundtrack (separate from Phase 2)
@@ -155,8 +155,7 @@ the preview and fits a 320px viewport.
 
 Four interactive features are complete in separate local commits. The optional
 service ecosystem graphic is deferred because the existing service cards and
-quick links already provide those customer paths. No Phase 4 portfolio work,
-scanner, backend, paid service, DNS change, or recurring price change is included.
+quick links already provide those customer paths. No scanner, backend, paid service, DNS change, or recurring price change was included in Phase 3.
 
 Final automated checks pass: site/PDF consistency, configurator pricing boundaries,
 theme contrast, contact provider mocks and audio state mocks. Browser checks pass at
@@ -165,3 +164,64 @@ errors. Keyboard checks cover planner handoff, command-palette filtering, focus 
 Escape, destination focus and comparison controls. Contact tests did not transmit
 email; audio remained OFF. JavaScript-disabled fallbacks and reduced-motion support
 were checked in source; physical-device and live email delivery testing were not done.
+
+
+## Phase 4 — portfolio and ACTIAS LUNA showcase
+
+The user confirmed Divine Design 144 as the portfolio project. Its source is
+https://github.com/TCD978/divinedesign.io (reviewed commit `1bd42c9`) and its working
+GitHub Pages URL is https://tcd978.github.io/divinedesign.io/.
+
+### Verified behavior and claim correction
+
+The reference is a single HTML file with inline CSS/JavaScript. `pickWeeklyReading`
+selects one of four stored readings by calendar week. `renderChanneledMessage` picks
+from a curated library. A five-minute browser interval refreshes the reading/guidance
+while the page is open and auto-mode is on; manual refresh controls also exist.
+There is no scheduled publishing workflow, backend, AI API call or daily content
+publication in the inspected repository. The earlier Flex IT sentence claiming
+that the project updates automatically every day has therefore been replaced.
+The project predates ACTIAS LUNA and is not described as originally using the brand.
+
+The reference uses responsive CSS/card stacking, but its live 390px view has
+horizontal overflow and a failed optional service-worker registration. These are
+limitations in the reference site, not the Flex IT page. No reference-project code
+was changed in this phase. The portfolio avoids claims of flawless mobile behavior,
+PWA support, measured business results, or server automation.
+
+### Assets and implementation
+
+`assets/portfolio/divine-desktop.jpg` and `divine-mobile.jpg` are actual browser
+captures from September 21, 2026 (1351×890 and 375×812 pixels). They total about
+172 KB, are lazy loaded with dimensions and alt text, and have full-image links.
+No third-party embeds or image services are loaded. Screenshots are historical
+captures; the live project may display different library content.
+
+`showcase.css` scopes the case study, ACTIAS explanation and illustrated build.
+`showcase.js` provides a deterministic weekday promotion illustration and a
+six-stage build walkthrough. Both clearly disclose their illustrative nature;
+neither runs a customer schedule nor creates/deploys a website. The schedule
+shows a weekend promotion Friday/Saturday, a follow-up Sunday, and regular content
+Monday–Thursday. No pricing, secrets, new dependency or network calls are added.
+
+The walkthrough never autoplays. Play/Pause, Next, Replay, and Skip are native
+buttons. Closing the disclosure, hiding the page or leaving stops the timer.
+Reduced motion starts at the completed view and supports manual stepping with
+no timed playback. Without JavaScript the six stages and completed illustration
+remain visible, and Friday's sample is readable without inactive controls.
+The existing soundtrack and contact implementation remain unchanged.
+
+### Validation and continuation
+
+Run `node test_showcase.cjs`, all previous Node tests and `python check_site.py`.
+The new test covers seven schedule days and invalid inputs, no autoplay, pause,
+next, replay, skip, end/close/visibility timer cleanup and reduced-motion changes.
+Browser checks cover loaded screenshots, day selection, keyboard walkthrough
+controls, mobile navigation and no horizontal overflow at 320, 390, 412, 768,
+800, 820, 950, 1024, 1366 and 1440px. No Flex IT console errors were observed.
+No real email was sent or music played. Physical-device testing was not performed.
+
+Phase 4 is the release boundary. Phase 5 (Flex Score) has not started; next work
+requires a feasibility/security assessment for real scanning. Never invent scans
+or scores. Any future repair of the separate Divine Design repository should be
+scoped as its own task.
