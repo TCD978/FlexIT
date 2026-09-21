@@ -282,3 +282,28 @@ changed. The site checker could not rerun because its existing local BeautifulSo
 dependency folder was inaccessible; no website runtime files changed. Future module acceptance tests are
 specified, not executed. Phase 7 has not started. The exact next module task is
 the one-client pilot in the architecture document.
+
+## Phase 7 — optional interaction polish
+
+The existing `phase2.css` now adds navigation underlines on hover/keyboard focus,
+card border feedback when their links receive focus, a restrained ACTIAS mark
+highlight, button press feedback, explicit select focus, and an inset focus ring
+on portfolio image links so rounded preview frames cannot clip it.
+
+Movement on hover is disabled for coarse pointers/touch devices. Reduced-motion
+preferences disable transitions and press movement. There are no entrance effects,
+hidden content, new scripts, dependencies, requests, continuous animations or
+changes to pricing, audio, contact, automation behavior or deployment settings.
+Optional Easter eggs are deferred; the phase focuses on everyday interactions.
+
+Validation: all six existing Node suites pass. Browser checks verified navigation
+underlines, ACTIAS focus feedback and the visible inset portfolio focus ring.
+Layouts fit 320, 390, 768 and 1366px without horizontal overflow; audio stayed OFF
+and no console errors were observed. Touch/reduced-motion media rules were
+reviewed in source; physical devices were not tested. Only CSS and documentation
+changed. The Python checker remains unavailable because its local dependency
+folder is inaccessible, as recorded in Phase 6.
+
+Phase 7 closes the planned website upgrade. Future work is separately scoped:
+the Phase 6 client pilot, the deferred scanner, and any repairs to the separate
+Divine Design project. No backend or customer automation has been activated.

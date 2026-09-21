@@ -184,3 +184,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  html {scroll-behavior:auto;}*,*::before,*::after {animation:none!important;transition:none!important;}
  .button:hover,.service:hover,.hero-paths>a:hover {transform:none;}
 }
+
+/* Phase 7: quiet interaction polish; no hidden content or runtime dependency. */
+#mainNav>a:not(.nav-contact) {text-decoration-thickness:2px;text-underline-offset:7px;}
+#mainNav>a:not(.nav-contact):focus-visible {text-decoration-line:underline;}
+.hero-paths>a:focus-visible {border-color:var(--blue);background:#183448;}
+.service:focus-within,.website-builds>article:focus-within,.managed-plans>article:focus-within {border-color:var(--blue);}
+.automation-intro:focus-within {border-color:var(--mint);}
+.actias-identity img {transition:filter .22s ease;}
+.automation-intro:focus-within .actias-identity img {filter:drop-shadow(0 0 9px #b7e6d755);}
+.button:active:not(:disabled) {box-shadow:inset 0 0 0 2px currentColor;}
+select:focus-visible {outline:3px solid #43baff;outline-offset:4px;}
+.project-previews a:focus-visible {display:block;outline:3px solid #8edcff;outline-offset:-4px;}
+@media(hover:hover) and (pointer:fine) {
+ #mainNav>a:not(.nav-contact):hover {text-decoration-line:underline;}
+ .automation-intro:hover .actias-identity img {filter:drop-shadow(0 0 9px #b7e6d755);}
+ .website-builds>article,.managed-plans>article {transition:border-color .18s ease;}
+ .website-builds>article:hover,.managed-plans>article:hover {border-color:var(--blue);}
+ .button:active:not(:disabled) {transform:translateY(1px);}
+}
+@media(hover:none),(pointer:coarse) {
+ .button:hover,.service:hover,.hero-paths>a:hover {transform:none;}
+}
+@media(prefers-reduced-motion:reduce) {
+ .button:active:not(:disabled) {transform:none;}
+}
