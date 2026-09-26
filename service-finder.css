@@ -1,0 +1,30 @@
+.service-finder {background:linear-gradient(125deg,#0c2230,#102b35);border-block:1px solid var(--line);}
+.finder-layout {display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;}
+.finder-intro>p:not(.eyebrow) {max-width:390px;color:var(--muted);font-size:17px;line-height:1.8;}
+.finder-intro .finder-human {font-size:14px!important;margin-top:32px;}
+.service-finder .text-link {color:var(--blue);}
+.finder-shell {padding:var(--space-4);background:var(--deep);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);min-width:0;}
+.finder-progress {font:11px/1.5 Consolas,monospace;letter-spacing:1.6px;color:var(--mint);margin:0 0 16px;}
+.finder-track {height:2px;background:#29414d;margin-bottom:28px;}
+.finder-track span {display:block;height:100%;background:var(--mint);transition:width var(--duration) var(--ease);}
+.finder-shell h3 {font-size:27px;line-height:1.2;letter-spacing:-.7px;margin:0 0 24px;}
+.finder-shell h3:focus {outline:none;}
+.finder-shell h3:focus-visible {outline:2px solid var(--blue);outline-offset:6px;}
+.finder-options {display:grid;gap:10px;}
+.finder-option {text-align:left;background:var(--surface);color:var(--white);border:1px solid #405b6b;border-radius:var(--control-radius);padding:17px 20px;cursor:pointer;min-height:56px;transition:background var(--duration),border-color var(--duration);}
+.finder-option strong {display:block;font-size:16px;font-weight:500;}
+.finder-option span {display:block;color:var(--muted);font-size:12px;margin-top:5px;}
+.finder-option:hover {background:#1b3544;border-color:var(--mint);}
+.finder-footer {display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px;border-top:1px solid var(--line);padding-top:16px;}
+.finder-footer>span {font:9px Consolas,monospace;letter-spacing:1px;color:var(--muted);margin-left:auto;}
+.finder-back {background:none;border:0;color:var(--blue);text-decoration:underline;text-underline-offset:4px;padding:8px 0;min-height:44px;font-size:13px;cursor:pointer;}
+.finder-price {font-size:32px;letter-spacing:-1px;color:var(--mint);margin:24px 0 16px;}
+.finder-note {font-size:12px;line-height:1.8;color:var(--muted);}
+.finder-note:empty {display:none;}
+#finderDescription {font-size:16px;color:#cfdee6;}
+.finder-result-actions {display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px;}
+#serviceHandoff {border-left:2px solid var(--mint);padding:12px 16px;background:#183a43;font-size:14px;margin:0 0 24px;color:#e0f2ef;}
+#finderFallback a {text-decoration:underline;}
+@media(max-width:800px) {.finder-layout {grid-template-columns:1fr;gap:32px;}.finder-intro>p:not(.eyebrow) {max-width:550px;}}
+@media(max-width:400px) {.finder-shell {padding:22px;}.finder-option {padding:16px;}.finder-shell h3 {font-size:24px;}.finder-footer>span {display:none;}}
+@media(prefers-reduced-motion:reduce) {.finder-track span {transition:none;}}

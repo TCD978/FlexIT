@@ -1,6 +1,7 @@
 """Content, pricing and local-link checks. Run from any directory."""
 from pathlib import Path
 import json,re
+from urllib.parse import urlsplit, unquote
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
 root=Path(__file__).resolve().parent
@@ -11,7 +12,9 @@ assert len(ids)==len(set(ids))
 for el in soup.select('[href],[src]'):
     url=el.get('href',el.get('src',''))
     if url.startswith('#') and len(url)>1: assert url[1:] in ids,url
-    elif url and not re.match(r'^(https?:|mailto:|tel:|#)',url): assert (root/url).is_file(),url
+    elif url and not re.match(r'^(https?:|mailto:|tel:|#)',url):
+        path=root/urlsplit(url).path
+        assert path.is_file() or (path/'index.html').is_file(),url
 for el in soup.select('input,textarea'): assert soup.select_one('label[for="'+el['id']+'"]')
 json.loads(soup.select_one('script[type="application/ld+json"]').string)
 assert len(soup.select('.service-grid > article'))==2
@@ -33,3 +36,25 @@ for el in soup.select('.rate strong,.package-grid strong,.managed-plans strong')
     assert el.get_text().replace('–','-') in pdf,el.get_text()
 assert (root/'CNAME').read_text().strip()=='flexintegrationtech.com'
 print('PASS: customer paths, plan boundaries, PDF pricing, preserved build prices, labels, schema, local links, mobile-repair removal, domain')
+
+# Check the independently indexable page and all local cross-page links/assets.
+for file in [root/'index.html',root/'web-development/index.html']:
+    page=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser')
+    assert len(page.select('h1'))==1,file
+    page_ids=[e['id'] for e in page.select('[id]')]
+    assert len(page_ids)==len(set(page_ids)),file
+    assert page.select_one('meta[name="description"]')['content']
+    assert page.select_one('link[rel="canonical"]')['href'].startswith('https://flexintegrationtech.com/')
+    for schema in page.select('script[type="application/ld+json"]'): json.loads(schema.string)
+    for el in page.select('[href],[src]'):
+        for attr in ['href','src']:
+            value=el.get(attr,'')
+            if not value or re.match(r'^(https?:|mailto:|tel:)',value): continue
+            url=urlsplit(value)
+            target=(file.parent/unquote(url.path)).resolve() if url.path else file
+            if target.is_dir(): target=target/'index.html'
+            assert target.is_file(),(file,value)
+            if url.fragment:
+                target_page=BeautifulSoup(target.read_text(encoding='utf-8'),'html.parser')
+                assert target_page.find(id=unquote(url.fragment)),(file,value)
+print('PASS: both pages have valid metadata, schema, headings, unique IDs, assets and cross-page anchors')

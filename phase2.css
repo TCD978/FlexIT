@@ -1,7 +1,7 @@
-/* Phase 2 — Flex IT visual system. Base content and behavior remain intact. */
-:root {--navy:#081725;--deep:#05111d;--blue:#8edcff;--muted:#afbdcb;--white:#f2f5f7;--line:#c9dcec26;--mint:#b7e6d7;--paper:#edf1f3;}
+/* Phase 2 â€” Flex IT visual system. Base content and behavior remain intact. */
+:root {--navy:#081725;--deep:#05111d;--blue:#8edcff;--muted:#afbdcb;--white:#f2f5f7;--line:#c9dcec26;--mint:#b7e6d7;--paper:#edf1f3;--surface:#112535;--border:#547083;--radius:8px;--control-radius:4px;--space-1:8px;--space-2:16px;--space-3:24px;--space-4:32px;--space-5:48px;--duration:.2s;--ease:cubic-bezier(.2,.7,.3,1);--shadow:0 20px 50px #00000024;--content-width:1200px;}
 body {background:var(--navy);line-height:1.6;}
-.wrap {width:min(1200px,calc(100% - 80px));}
+.wrap {width:min(var(--content-width),calc(100% - 80px));}
 html {scroll-padding-top:24px;}
 section[id],details[id] {scroll-margin-top:24px;}
 h1,h2,h3,h4,p {overflow-wrap:break-word;}
@@ -209,3 +209,31 @@ select:focus-visible {outline:3px solid #43baff;outline-offset:4px;}
 @media(prefers-reduced-motion:reduce) {
  .button:active:not(:disabled) {transform:none;}
 }
+/* Shared primitives used by the interactive service and automation modules. */
+[hidden] {display:none!important;}
+select,button {font:inherit;}
+input,textarea,select {scroll-margin-block:28px;}
+button:disabled {cursor:default;}
+.section-heading>p {max-width:480px;}
+.service p {min-height:0;}
+.hero .text-link {color:var(--blue);}
+.hero-system {display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font:10px/1.6 Consolas,monospace;letter-spacing:1.4px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+.hero-system span:last-child {color:var(--mint);}
+.connection-art {height:230px;perspective:600px;}
+.connection-map {width:100%;height:100%;max-width:440px;transform:rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));transition:transform .35s var(--ease);}
+.connection-map .mesh {fill:none;stroke:#81b5c3;stroke-width:1;opacity:.4;}
+.connection-map .wing {fill:#8edcff08;stroke:#8edcff55;}
+.connection-map .node {fill:var(--deep);stroke:var(--mint);stroke-width:1.5;}
+.connection-map .core {fill:#173c49;stroke:var(--mint);}
+.connection-map text {fill:var(--white);font:14px 'Segoe UI',sans-serif;text-anchor:middle;letter-spacing:2px;}
+.connection-map .signal-route {fill:none;stroke:var(--mint);stroke-width:1.5;stroke-dasharray:12 260;stroke-dashoffset:272;animation:route-arrive 3.8s var(--ease) 1 forwards;}
+@keyframes route-arrive {to {stroke-dashoffset:0;opacity:0;}}
+.hero-art {min-width:0;}
+@media(min-width:1101px) {
+ .header {position:sticky;top:0;z-index:20;box-shadow:0 6px 24px #00000018;}
+ html {scroll-padding-top:165px;}
+ section[id],details[id] {scroll-margin-top:24px;}
+}
+@media(max-width:800px) {.hero-system {grid-column:1/-1;}.hero-art {grid-template-columns:180px minmax(0,1fr);}}
+@media(max-width:600px) {.connection-art {display:grid;height:170px;}.hero-system {font-size:9px;}.hero-paths {margin-top:10px;}}
+@media(prefers-reduced-motion:reduce) {.connection-map {transform:none;}.connection-map .signal-route {display:none;}}

@@ -2,6 +2,40 @@
 
 Static HTML/CSS/JavaScript. GitHub Pages deploys the `main` branch, repository root, to https://flexintegrationtech.com. No application build or new hosting service is required. Keep CNAME and the existing Pages settings intact.
 
+## September 26 interactive upgrade
+
+The new master plan extends the earlier completed phases; historical phase notes below describe their original release boundaries. The current site remains static HTML/CSS/JavaScript on GitHub Pages, with no new runtime package, paid service, server, or deployment workflow.
+
+- Design foundation and hero: shared tokens in `phase2.css`, an original inline wing/network graphic, a single short signal animation, and pointer depth in `hero.js`. Motion is optional and has no continuous loop. Desktop navigation stays accessible while scrolling; mobile retains the existing menu.
+- Service finder: `service-finder.js` supports 39 paths through three choices. Recommendations read the title, description, and price directly from the canonical `#service-*` pricing rows. Custom scopes never receive invented prices. No visitor choices leave the page until the visitor submits the existing contact form.
+- ACTIAS LUNA Live: `actias-live.js` evaluates an actual weekday rule in America/New_York and selects existing Flex IT services. Evaluations run once a minute while the page is visible, with pause and clearly labelled simulated-day previews. It is browser behavior, not server publishing or uptime monitoring. The renderer accepts a snapshot; a future backend adapter must supply verified provenance and publication evidence before making server claims.
+- Contextual contact: `contact-context.js` prepares editable service inquiries, preserves customer notes, handles repeated requests, and refuses to modify a message during sending. Existing planner and review handoffs remain available. The planner now also guards against in-flight submissions and clears stale feedback. Replacement uses literal text, including dollar-sign sequences.
+- Search landing page: `/web-development/` provides an independently indexable local web-development page, with its own title, description, canonical, Service structured data and sitemap entry. It reuses the existing build cards and verified portfolio case study through `build_site.py`. Its template is `templates/web-development.html`.
+- Pricing: `index.html` pricing rows remain the source of truth. `build_site.py` generates `pricing-data.js` for the existing planner. Both generated files are committed, so Pages needs no build step. `python build_site.py --check` fails if output is stale. Keep static price mentions and the downloadable PDF consistent; `check_site.py` checks existing published rates against the PDF.
+- Health check: the existing honest personal website-review intake and `FLEX-SCORE-SPEC.md` remain the supported path. No fake scans, grades, external fetch proxy, or unsupported HTTPS claim has been added. An automatic public scanner still requires the separately described backend/security work.
+
+All original service rows, plan terms, contact provider settings, audio, project screenshots, domain settings, and Pages configuration are retained. No live email delivery or physical-device listening is part of automated testing.
+
+### Current verification
+
+```sh
+python -m pip install -r requirements.txt
+python build_site.py --check
+python check_site.py
+node test_actias_live.cjs
+node test_service_finder.cjs
+node test_contact_context.cjs
+node test_configurator.cjs
+node test_contact.cjs
+node test_website_review.cjs
+node test_design.cjs
+node test_showcase.cjs
+node test_audio.cjs
+git diff --check
+```
+
+For content changes, run `python build_site.py` before the checks. For price changes, also run `python build_pricing.py` and visually review the PDF before publishing. New runtime tests cover 39 finder paths, Eastern midnight and DST boundaries, preview isolation, timer cleanup, contact preservation, reset and sending guards. Responsive browser review covers both pages at 320, 390, 768, 820, 1024, 1366 and 1440px. See `UPGRADE-VALIDATION.md` for the final verification record and deployment boundary.
+
 ## Local preview and checks
 
 ```sh
@@ -113,7 +147,7 @@ Validation: `node test_configurator.cjs`, `node test_contact.cjs`,
 `node test_audio.cjs`, and `python check_site.py`. Browser checks cover keyboard
 handoff, repeat requests, preserved notes, reset, custom recommendations, mobile
 and desktop layout, and no initial audio playback. Physical devices were not tested.
-Prices must be updated in the published content, PDF source and `PRICES` together.
+Prices are now read from the canonical pricing rows in `index.html`; run `python build_site.py` and rebuild the pricing PDF after changing rates. See the September 26 upgrade below.
 
 
 ## Phase 3 — quick links / command palette
