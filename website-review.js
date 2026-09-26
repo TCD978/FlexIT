@@ -57,7 +57,7 @@
         }
         if (!form.reportValidity()) return;
         const request = reviewSummary({url:parsed.url,priority:document.getElementById('reviewPriority').value,goal:document.getElementById('reviewGoal').value});
-        if (previousRequest && message.value.includes(previousRequest)) message.value = message.value.replace(previousRequest,request);
+        if (previousRequest && message.value.includes(previousRequest)) message.value = message.value.replace(previousRequest,() => request);
         else message.value += (message.value.trim() ? '\n\n' : '') + request;
         previousRequest = request;
         const contactStatus = document.getElementById('formStatus');

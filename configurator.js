@@ -1,7 +1,7 @@
 /* Published prices only. Custom work is deliberately excluded from estimates. */
 (function () {
     'use strict';
-    const PRICES = Object.freeze({onePage: 750, business: 1500, extraLow: 150, extraHigh: 250, care: 49, automation: 99, pro: 179});
+    const PRICES = typeof module !== 'undefined' && module.exports ? require('./pricing-data.js') : window.FlexPrices;
     const money = amount => '$' + amount.toLocaleString('en-US');
     function recommend(input) {
         const pages = Number(input.pages);
@@ -41,7 +41,7 @@
     }
     if (typeof module !== 'undefined' && module.exports) { module.exports = {recommend, PRICES}; return; }
     const form = document.getElementById('buildForm');
-    if (!form) return;
+    if (!form || !PRICES) return;
     const result = document.getElementById('buildResult');
     const automationFields = document.getElementById('automationFields');
     const selected = name => Array.from(form.querySelectorAll('[name="' + name + '"]:checked'), el => el.value);
@@ -100,11 +100,18 @@
     form.addEventListener('submit', event => {
         event.preventDefault();
         if (!form.reportValidity()) return;
+        if (document.getElementById('contactForm').getAttribute('aria-busy') === 'true') {
+            setText('buildUpdate', 'Your previous message is still sending. Please wait before preparing another request.');
+            return;
+        }
+        const contactStatus = document.getElementById('formStatus');
+        contactStatus.textContent = '';
+        contactStatus.removeAttribute('data-state');
         const {data, rec} = render();
         const message = document.getElementById('message');
         const request = summary(data, rec);
         // Replace only our exact previous block; preserve any customer-written text.
-        if (previousRequest && message.value.includes(previousRequest)) message.value = message.value.replace(previousRequest, request);
+        if (previousRequest && message.value.includes(previousRequest)) message.value = message.value.replace(previousRequest, () => request);
         else message.value += (message.value.trim() ? '\n\n' : '') + request;
         previousRequest = request;
         document.getElementById('buildHandoff').hidden = false;

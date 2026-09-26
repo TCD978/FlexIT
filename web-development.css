@@ -1,0 +1,11 @@
+/* The dedicated search landing page reuses the main site components. */
+.web-page-hero {max-width:var(--content-width);}
+.web-page-hero h1 {max-width:900px;}
+.web-page-hero .intro {max-width:660px;}
+.web-page-care p {max-width:720px;color:var(--muted);font-size:16px;line-height:1.8;}
+.web-page-care .text-link {color:var(--blue);}
+.web-page-faq details {border-bottom:1px solid #b3c3cc;padding:18px 0;}
+.web-page-faq summary {cursor:pointer;min-height:44px;padding:10px 0;font-size:18px;font-weight:500;}
+.web-page-faq details p {max-width:720px;color:#476072;line-height:1.8;}
+.web-page-faq h2 {margin-bottom:32px;}
+@media(max-width:800px) {.nav nav {flex-wrap:wrap;gap:12px 20px;}.nav nav a {display:inline-flex;align-items:center;min-height:44px;}.web-page-hero h1 {font-size:clamp(36px,6vw,58px);}}

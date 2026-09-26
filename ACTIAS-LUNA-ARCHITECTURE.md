@@ -1,3 +1,5 @@
+> September 26 update: Flex IT now includes a browser-only Live demonstration in `actias-live.js`. It evaluates an existing-service weekday rule and exposes pause/preview controls with honest session timestamps. The server publishing, monitoring, client provisioning, and billing designs below remain proposals. No backend job has been activated.
+
 # ACTIAS LUNA — reusable automation architecture
 
 ## Status and foundation
